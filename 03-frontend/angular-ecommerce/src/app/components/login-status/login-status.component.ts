@@ -27,6 +27,8 @@ export class LoginStatusComponent implements OnInit {
   }
 
   getUserDetails() {
+
+
     if (this.isAuthenticated) {
       // Fetch the logged in user details (user's claims)
 
@@ -36,6 +38,11 @@ export class LoginStatusComponent implements OnInit {
           this.userFullName = res.name as string;
         }
       )
+        .catch(
+          (error) => {
+            console.log(error);
+          }
+        )
     }
   }
 
